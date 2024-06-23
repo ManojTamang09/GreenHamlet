@@ -22,8 +22,11 @@ Route::get('/', function () {
     // $testimonial=Testimonial::take(6)->orderby('id','desc')->get();
     // return view('pages.index',compact('rooms','slider','attraction','about','testimonial'));
     return view('pages.index');
+
 });
 
+
+Route::get('/pages/rooms', [App\Http\Controllers\PagesController::class, 'rooms'])->name('pages.rooms');
 
 Auth::routes();
 
