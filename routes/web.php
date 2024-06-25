@@ -36,7 +36,7 @@ Route::get('/pages/rooms', [App\Http\Controllers\PagesController::class, 'rooms'
 // Route::post('/pages/contactstore','PagesController@contactstore')->name('pages.contactstore');
 // Route::get('/pages/amenities','PagesController@amenities')->name('pages.amenities');
 // Route::get('/pages/attractions','PagesController@attractions')->name('pages.attractions');
-// Route::resource('pages', 'PagesController');
+/// Route::resource('pages', 'PagesController');
 
 
 Route::middleware('auth')->group(function () {
