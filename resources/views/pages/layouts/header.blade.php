@@ -118,7 +118,6 @@
                     <div class="d-inline-flex align-items-center py-2">
                         <a class="me-3" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="me-3" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="me-3" href=""><i class="fab fa-linkedin-in"></i></a>
                         <a class="me-3" href=""><i class="fab fa-instagram"></i></a>
                         <a class="" href=""><i class="fab fa-youtube"></i></a>
                     </div>
@@ -140,6 +139,7 @@
                 <a href="element.html" class="nav-item nav-link">Ameneties</a>
                 <a href="element.html" class="nav-item nav-link">About Us</a>
                 <a href="element.html" class="nav-item nav-link">Gallery</a>
+                <a href="https://www.google.com/travel/search?q=green%20hamlet%20reviews&g2lb=4814050%2C4874190%2C4893075%2C4965990%2C10210223%2C72277293%2C72302247%2C72317059%2C72406588%2C72414906%2C72421566%2C72462234%2C72470899%2C72471280%2C72472051%2C72473841%2C72481459%2C72485658%2C72486593%2C72494250%2C72513513%2C72536387%2C72538597%2C72549171%2C72570850%2C72586336%2C72597757%2C72602734%2C72605013%2C72606237%2C72608659%2C72616110%2C72619927%2C72620306%2C72624691%2C72634629&hl=en-IN&gl=in&ssta=1&ts=CAEaRwopEicyJTB4MzllNmJiN2QzMGM4ZGM1YjoweDRhMmExZjAzNTJjNzQ1MTgSGhIUCgcI6A8QBxgCEgcI6A8QBxgDGAEyAhAA&qs=CAEyE0Nnb0ltSXFkbHJYZ2g1VktFQUU4AkIJCRhFx1IDHypKQgkJGEXHUgMfKko&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwi4weXioPeGAxUAAAAAHQAAAAAQDQ" class="nav-item nav-link" target="_blank">Reviews</a>
             </div>
             <a href="https://htmlcodex.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Contact Us<i class="fa fa-arrow-right ms-3"></i></a>
             </div>

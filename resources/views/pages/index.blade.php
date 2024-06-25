@@ -4,18 +4,21 @@
       <div class="container-fluid p-0 mb-5">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="{{asset('pages/img/carousel-1.jpg')}}" alt="Image">
+                @for ($i = 0;$i<count($slider); $i++)
+                <div class="carousel-item {{$i === 0 ? 'active' : ''}}">
+                    <img class="w-100" src="{{asset('sliderphoto')}}/{{$slider[$i]->photo}}" alt="Image" style="height:700px">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 700px;">
-                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
-                            <h1 class="display-3 text-white mb-4 animated slideInDown">Discover A Brand Luxurious Hotel</h1>
+                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">{{$slider[$i]->title}}</h6>
+                            <h1 class="display-3 text-white mb-4 animated slideInDown" style="font-size:55px;">{{$slider[$i]->sub_title}}</h1>
                             <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
                             <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                @endfor
+
+                {{-- <div class="carousel-item active">
                     <img class="w-100" src="{{asset('pages/img/carousel-2.jpg')}}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 700px;">
@@ -25,7 +28,7 @@
                             <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
                 data-bs-slide="prev">
@@ -157,187 +160,45 @@
                 <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Rooms</span></h1>
             </div>
             <div class="row g-4">
+                @if(count($rooms)>0)
+                @foreach($rooms as  $room)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="room-item shadow rounded overflow-hidden">
                         <div class="position-relative">
-                            <img class="img-fluid" src="{{asset('pages/img/room-1.jpg')}}" alt="">
-                            <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
+                            <img class="img-fluid" src="{{asset('roomphoto')}}/{{$room->photo}}" alt="" style="height:301px;">
+                            <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">₹ {{$room->price}}/Night</small>
                         </div>
                         <div class="p-4 mt-2">
                             <div class="d-flex justify-content-between mb-3">
-                                <h5 class="mb-0">Junior Suite</h5>
-                                <div class="ps-2">
+                                <h5 class="mb-0">{{Str::limit($room->name,23)}}</h5>
+                                {{-- <div class="ps-2">
                                     <small class="fa fa-star text-primary"></small>
                                     <small class="fa fa-star text-primary"></small>
                                     <small class="fa fa-star text-primary"></small>
                                     <small class="fa fa-star text-primary"></small>
                                     <small class="fa fa-star text-primary"></small>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="d-flex mb-3">
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                                {{-- <small class="border-end me-3 pe-3"><i class="fa fa-washing-machine text-primary me-2"></i></small> --}}
+                                <small class="border-end me-3 pe-3"><i class="fa fa-tv text-primary me-2"></i>TV</small>
+                                <small class="border-end me-3 pe-3"><i class="fa fa-parking text-primary me-2"></i>Parking</small>
+                                <small><i class="fa fa-wifi text-primary me-2"></i>Wi-fi</small>
                             </div>
-                            <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <div class="d-flex justify-content-between">
-                                <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Room<i class="fa fa-arrow-right ms-3"></i></a>
-                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
+                            {{-- <p class="text-body mb-3">&nbsp;</p> --}}
+                            <div class="d-flex justify-content-between mt-4">
+                                <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{route('pages.roomdetails',[$room->id])}}">View Room<i class="fa fa-arrow-right ms-3"></i></a>
+                                {{-- <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a> --}}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="room-item shadow rounded overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="{{asset('pages/img/room-2.jpg')}}" alt="">
-                            <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                        </div>
-                        <div class="p-4 mt-2">
-                            <div class="d-flex justify-content-between mb-3">
-                                <h5 class="mb-0">Executive Suite</h5>
-                                <div class="ps-2">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                            </div>
-                            <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <div class="d-flex justify-content-between">
-                                <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Room<i class="fa fa-arrow-right ms-3"></i></a>
-                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="room-item shadow rounded overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="{{asset('pages/img/room-3.jpg')}}" alt="">
-                            <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                        </div>
-                        <div class="p-4 mt-2">
-                            <div class="d-flex justify-content-between mb-3">
-                                <h5 class="mb-0">Super Deluxe</h5>
-                                <div class="ps-2">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                            </div>
-                            <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <div class="d-flex justify-content-between">
-                                <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Room<i class="fa fa-arrow-right ms-3"></i></a>
-                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="room-item shadow rounded overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="{{asset('pages/img/room-3.jpg')}}" alt="">
-                            <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                        </div>
-                        <div class="p-4 mt-2">
-                            <div class="d-flex justify-content-between mb-3">
-                                <h5 class="mb-0">Super Deluxe</h5>
-                                <div class="ps-2">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                            </div>
-                            <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <div class="d-flex justify-content-between">
-                                <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Room<i class="fa fa-arrow-right ms-3"></i></a>
-                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="room-item shadow rounded overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="{{asset('pages/img/room-3.jpg')}}" alt="">
-                            <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                        </div>
-                        <div class="p-4 mt-2">
-                            <div class="d-flex justify-content-between mb-3">
-                                <h5 class="mb-0">Super Deluxe</h5>
-                                <div class="ps-2">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                            </div>
-                            <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <div class="d-flex justify-content-between">
-                                <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Room<i class="fa fa-arrow-right ms-3"></i></a>
-                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="room-item shadow rounded overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="{{asset('pages/img/room-3.jpg')}}" alt="">
-                            <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                        </div>
-                        <div class="p-4 mt-2">
-                            <div class="d-flex justify-content-between mb-3">
-                                <h5 class="mb-0">Super Deluxe</h5>
-                                <div class="ps-2">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                            </div>
-                            <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <div class="d-flex justify-content-between">
-                                <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Room<i class="fa fa-arrow-right ms-3"></i></a>
-                                <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                @endif
+
+
             </div>
-            <div class="col-12 text-center wow fadeInUp mt-3" data-wow-delay="0.9s">
+            <div class="col-12 text-center wow fadeInUp mt-4" data-wow-delay="0.9s">
                 <a href="{{route('pages.rooms')}}" class="btn btn-primary py-3 px-5">Explore All Rooms</a>
                 </div>
         </div>

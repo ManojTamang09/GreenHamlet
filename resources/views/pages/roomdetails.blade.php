@@ -10,12 +10,12 @@
         <div class="container-fluid page-header mb-5 p-0" style="background-image: url('https://a0.muscache.com/im/pictures/1019b0ed-cd10-42df-9d83-2a47eb8db504.jpg?im_w=960');">
             <div class="container-fluid page-header-inner py-5">
                 <div class="container text-center pb-5">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">{{$details->name}}</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">{{$details->name}}</li>
                         </ol>
                     </nav>
                 </div>
@@ -76,12 +76,17 @@
     <div class="col-lg-8">
     <div id="room-carousel" class="carousel slide mb-5 wow fadeIn" data-bs-ride="carousel" data-wow-delay="0.1s">
     <div class="carousel-inner">
+        @if(count($room_galleries)<=0)
     <div class="carousel-item active">
-    <img class="w-100" src="{{asset('pages/img/room-1.jpg')}}" alt="Image">
+    <img class="w-100" src="{{asset('roomphoto')}}/{{$details->photo}}" alt="Image">
     </div>
-    <div class="carousel-item">
-    <img class="w-100" src="{{asset('pages/img/room-2.jpg')}}" alt="Image">
+    @else
+    @for ($i = 0;$i<count($room_galleries); $i++)
+    <div class="carousel-item {{$i === 0 ? 'active' : ''}}">
+    <img class="w-100" src="{{asset('roomgallery')}}/{{$room_galleries[$i]->photos}}" alt="Image" style="height: 420px;">
     </div>
+    @endfor
+    @endif
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#room-carousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
