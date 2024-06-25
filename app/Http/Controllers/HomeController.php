@@ -2,7 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Booking;
+use App\Contact;
+use App\Destination;
+use App\Feedback;
+use App\OfflineBooking;
+use App\RoomEnquiry;
+use App\RoomGallery;
+use App\Rooms;
+use App\TravelEnquiry;
+use App\Travels;
+use App\wpc4VxcfLeadsDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +35,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+
+        $enquiry=RoomEnquiry::all();
+        $contact=Contact::all();
+
+        return view('home',compact('contact','enquiry'));
+
+
     }
 }

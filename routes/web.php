@@ -27,7 +27,33 @@ Route::get('/', function () {
 
 
 Route::get('/pages/rooms', [App\Http\Controllers\PagesController::class, 'rooms'])->name('pages.rooms');
+// Route::get('/pages/roomdetails/{id}','PagesController@roomdetails')->name('pages.roomdetails');
+// Route::get('/pages/attractiondetails/{id}','PagesController@attractiondetails')->name('pages.attractiondetails');
+// Route::get('/pages/allroomdetails','PagesController@allroomdetails')->name('pages.allroomdetails');
+// Route::get('/pages/aboutus','PagesController@aboutus')->name('pages.aboutus');
+// Route::get('/pages/gallery','PagesController@gallery')->name('pages.gallery');
+// Route::get('/pages/contactus','PagesController@contactus')->name('pages.contactus');
+// Route::post('/pages/contactstore','PagesController@contactstore')->name('pages.contactstore');
+// Route::get('/pages/amenities','PagesController@amenities')->name('pages.amenities');
+// Route::get('/pages/attractions','PagesController@attractions')->name('pages.attractions');
+// Route::resource('pages', 'PagesController');
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    // Route::get('/home', 'HomeController@index')->name('home');
+    // Route::resource('rooms', 'RoomsController');
+    // Route::get('/rooms/deletephoto/{id}','RoomsController@deletephoto')->name('rooms.deletephoto');
+    // Route::get('/rooms/deleteamenities/{id}','RoomsController@deleteamenities')->name('rooms.deleteamenities');
+    // Route::resource('gallery1', 'GalleryController');
+    // Route::resource('slider', 'SliderController');
+    // Route::resource('contact', 'ContactController');
+    // Route::resource('feedback', 'FeedbackController');
+    // Route::resource('roomenquiry', 'RoomEnquiryController');
+    // Route::resource('attractions', 'NearbyAttractionController');
+    // Route::resource('about', 'AboutController');
+    // Route::resource('testimonials', 'TestimonialController');
+ });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
