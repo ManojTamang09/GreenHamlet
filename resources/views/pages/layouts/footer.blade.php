@@ -22,15 +22,13 @@
         <div class="container-fluid bg-dark text-light footer wow fadeIn mt-5" data-wow-delay="0.1s">
             <div class="container pb-5">
                 <div class="row g-5">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="bg-primary rounded p-4">
-                            <a href="index.html"><h1 class="text-white text-uppercase mb-3">Hotelier</h1></a>
-                            <p class="text-white mb-0">
-								Download <a class="text-dark fw-medium" href="https://htmlcodex.com/hotel-html-template-pro">Hotelier – Premium Version</a>, build a professional website for your hotel business and grab the attention of new visitors upon your site’s launch.
-							</p>
-                        </div>
+                    <div class="col-lg-4">
+                        <h6 class="section-title text-start text-primary text-uppercase mb-4">Location</h6>
+                        {{-- <div class="bg-primary rounded p-4"> --}}
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56697.40067801787!2d88.58654719295379!3d27.357360511743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6bb7d30c8dc5b%3A0x4a2a1f0352c74518!2sGreen%20Hamlet!5e0!3m2!1sen!2sin!4v1719420506895!5m2!1sen!2sin" width="320" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        {{-- </div> --}}
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-5">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
@@ -42,25 +40,25 @@
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-12">
-                        <div class="row gy-5 g-4">
-                            <div class="col-md-6">
+                    <div class="col-lg-3">
+                        {{-- <div class="row gy-5 g-4"> --}}
+                            {{-- <div class="col-md-6"> --}}
                                 <h6 class="section-title text-start text-primary text-uppercase mb-4">Company</h6>
                                 <a class="btn btn-link" href="">About Us</a>
                                 <a class="btn btn-link" href="">Contact Us</a>
                                 <a class="btn btn-link" href="">Privacy Policy</a>
                                 <a class="btn btn-link" href="">Terms & Condition</a>
                                 <a class="btn btn-link" href="">Support</a>
-                            </div>
-                            <div class="col-md-6">
+                            {{-- </div> --}}
+                            {{-- <div class="col-md-6">
                                 <h6 class="section-title text-start text-primary text-uppercase mb-4">Services</h6>
                                 <a class="btn btn-link" href="">Food & Restaurant</a>
                                 <a class="btn btn-link" href="">Spa & Fitness</a>
                                 <a class="btn btn-link" href="">Sports & Gaming</a>
                                 <a class="btn btn-link" href="">Event & Party</a>
                                 <a class="btn btn-link" href="">GYM & Yoga</a>
-                            </div>
-                        </div>
+                            </div> --}}
+                        {{-- </div> --}}
                     </div>
                 </div>
             </div>
