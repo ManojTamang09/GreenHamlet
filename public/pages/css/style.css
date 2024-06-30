@@ -415,7 +415,7 @@
 
 #videoModal .modal-body {
     position: relative;
-    padding: 0px;
+    /* padding: 0px; */
 }
 
 #videoModal .close {

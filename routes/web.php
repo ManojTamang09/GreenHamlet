@@ -29,24 +29,24 @@ Route::get('/', function () {
 });
 
 
-Route::get('/pages/rooms', [App\Http\Controllers\PagesController::class, 'rooms'])->name('pages.rooms');
-Route::get('/pages/roomdetails/{id}',[App\Http\Controllers\PagesController::class, 'roomdetails'])->name('pages.roomdetails');
+Route::post('/pages/store', 'App\Http\Controllers\PagesController@store')->name('pages.store');
+Route::get('/pages/rooms','App\Http\Controllers\PagesController@rooms')->name('pages.rooms');
+Route::get('/pages/roomdetails/{id}','App\Http\Controllers\PagesController@roomdetails')->name('pages.roomdetails');
 // Route::get('/pages/attractiondetails/{id}','PagesController@attractiondetails')->name('pages.attractiondetails');
 // Route::get('/pages/allroomdetails','PagesController@allroomdetails')->name('pages.allroomdetails');
-// Route::get('/pages/aboutus','PagesController@aboutus')->name('pages.aboutus');
+Route::get('/pages/aboutus','App\Http\Controllers\PagesController@aboutus')->name('pages.aboutus');
 // Route::get('/pages/gallery','PagesController@gallery')->name('pages.gallery');
-// Route::get('/pages/contactus','PagesController@contactus')->name('pages.contactus');
-// Route::post('/pages/contactstore','PagesController@contactstore')->name('pages.contactstore');
-// Route::get('/pages/amenities','PagesController@amenities')->name('pages.amenities');
+Route::get('/pages/contactus','App\Http\Controllers\PagesController@contactus')->name('pages.contactus');
+Route::post('/pages/contactstore','App\Http\Controllers\PagesController@contactstore')->name('pages.contactstore');
+Route::get('/pages/amenities','App\Http\Controllers\PagesController@amenities')->name('pages.amenities');
 // Route::get('/pages/attractions','PagesController@attractions')->name('pages.attractions');
-/// Route::resource('pages', 'PagesController');
 
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    // Route::get('/home', 'HomeController@index')->name('home');
-    Route::resource('rooms', App\Http\Controllers\RoomsController::class);
+    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+    Route::resource('rooms','RoomsController@index');
     Route::get('/rooms/deletephoto/{id}','RoomsController@deletephoto')->name('rooms.deletephoto');
     Route::get('/rooms/deleteamenities/{id}','RoomsController@deleteamenities')->name('rooms.deleteamenities');
     Route::resource('gallery1', 'GalleryController');

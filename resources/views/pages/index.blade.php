@@ -11,24 +11,13 @@
                         <div class="p-3" style="max-width: 700px;">
                             <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">{{$slider[$i]->title}}</h6>
                             <h1 class="display-3 text-white mb-4 animated slideInDown" style="font-size:55px;">{{$slider[$i]->sub_title}}</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
-                            <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
+                            <a href="{{ route('pages.rooms') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
+                            <a href="#book" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
                         </div>
                     </div>
                 </div>
                 @endfor
 
-                {{-- <div class="carousel-item active">
-                    <img class="w-100" src="{{asset('pages/img/carousel-2.jpg')}}" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 700px;">
-                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
-                            <h1 class="display-3 text-white mb-4 animated slideInDown">Discover A Brand Luxurious Hotel</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
-                            <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
                 data-bs-slide="prev">
@@ -43,54 +32,11 @@
         </div>
     </div>
     <!-- Carousel End -->
-
-
     <!-- Booking Start -->
-    <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="bg-white shadow" style="padding: 35px;">
-                <div class="row g-2">
-                    <div class="col-md-10">
-                        <div class="row g-2">
-                            <div class="col-md-3">
-                                <div class="date" id="date1" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input"
-                                        placeholder="Check in" data-target="#date1" data-toggle="datetimepicker" />
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="date" id="date2" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" placeholder="Check out" data-target="#date2" data-toggle="datetimepicker"/>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <select class="form-select">
-                                    <option selected>Adult</option>
-                                    <option value="1">Adult 1</option>
-                                    <option value="2">Adult 2</option>
-                                    <option value="3">Adult 3</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <select class="form-select">
-                                    <option selected>Child</option>
-                                    <option value="1">Child 1</option>
-                                    <option value="2">Child 2</option>
-                                    <option value="3">Child 3</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-primary w-100">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    @include('pages.layouts.modal')
+
     <!-- Booking End -->
-
-
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -171,24 +117,14 @@
                         <div class="p-4 mt-2">
                             <div class="d-flex justify-content-between mb-3">
                                 <h5 class="mb-0">{{Str::limit($room->name,23)}}</h5>
-                                {{-- <div class="ps-2">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                </div> --}}
                             </div>
                             <div class="d-flex mb-3">
-                                {{-- <small class="border-end me-3 pe-3"><i class="fa fa-washing-machine text-primary me-2"></i></small> --}}
                                 <small class="border-end me-3 pe-3"><i class="fa fa-tv text-primary me-2"></i>TV</small>
                                 <small class="border-end me-3 pe-3"><i class="fa fa-parking text-primary me-2"></i>Parking</small>
                                 <small><i class="fa fa-wifi text-primary me-2"></i>Wi-fi</small>
                             </div>
-                            {{-- <p class="text-body mb-3">&nbsp;</p> --}}
                             <div class="d-flex justify-content-between mt-4">
                                 <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{route('pages.roomdetails',[$room->id])}}">View Room<i class="fa fa-arrow-right ms-3"></i></a>
-                                {{-- <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a> --}}
                             </div>
                         </div>
                     </div>

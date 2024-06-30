@@ -426,96 +426,36 @@
     <h1 class="mb-5">Explore More <span class="text-primary text-uppercase">Rooms</span></h1>
     </div>
     <div class="row g-4">
-    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="room-item rounded">
-    <div class="position-relative">
-    <img class="img-fluid" src="https://a0.muscache.com/im/pictures/41d77fcc-07af-4676-9e90-c81ff0372a5a.jpg?im_w=1200" alt>
-    <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-    </div>
-    <div class="p-4 mt-2">
-    <div class="d-flex justify-content-between mb-3">
-    <h5 class="mb-0">Junior Suite</h5>
-    <div class="ps-2">
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    </div>
-    </div>
-    <div class="d-flex mb-3">
-    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-    </div>
-    <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-    <div class="d-flex justify-content-between">
-    <a class="btn btn-sm btn-primary rounded py-2 px-4" href>View Detail</a>
-    <a class="btn btn-sm btn-dark rounded py-2 px-4" href>Book Now</a>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-    <div class="room-item rounded">
-    <div class="position-relative">
-    <img class="img-fluid" src="https://a0.muscache.com/im/pictures/miso/Hosting-891946198530140504/original/1ac7118c-c6dd-4066-a55e-c79f9daa4899.jpeg?im_w=1200" alt>
-    <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-    </div>
-    <div class="p-4 mt-2">
-    <div class="d-flex justify-content-between mb-3">
-    <h5 class="mb-0">Executive Suite</h5>
-    <div class="ps-2">
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    </div>
-    </div>
-    <div class="d-flex mb-3">
-    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-    </div>
-    <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-    <div class="d-flex justify-content-between">
-    <a class="btn btn-sm btn-primary rounded py-2 px-4" href>View Detail</a>
-    <a class="btn btn-sm btn-dark rounded py-2 px-4" href>Book Now</a>
-    </div>
-    </div>
-    </div>
-    </div>
+   
+        @if(count($rooms)>0)
+        @foreach($rooms as  $room)
     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
     <div class="room-item rounded">
     <div class="position-relative">
-    <img class="img-fluid" src="https://a0.muscache.com/im/pictures/3285399a-909a-4935-b326-2c08f73113c3.jpg?im_w=1200" alt>
-    <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
+        <img class="img-fluid" src="{{asset('roomphoto')}}/{{$room->photo}}" alt="" style="height:301px;">
+        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
+            ₹ {{$room->price}}/Night
+        </small>
     </div>
     <div class="p-4 mt-2">
     <div class="d-flex justify-content-between mb-3">
-    <h5 class="mb-0">Super Deluxe</h5>
-    <div class="ps-2">
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    <small class="fa fa-star text-primary"></small>
-    </div>
+    <h5 class="mb-0">{{Str::limit($room->name,23)}}</h5>
+ 
     </div>
     <div class="d-flex mb-3">
-    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+        <small class="border-end me-3 pe-3"><i class="fa fa-tv text-primary me-2"></i>TV</small>
+        <small class="border-end me-3 pe-3"><i class="fa fa-parking text-primary me-2"></i>Parking</small>
+        <small><i class="fa fa-wifi text-primary me-2"></i>Wi-fi</small>
     </div>
-    <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+    <p class="text-body mb-3">{{Str::limit($room->name,23)}}</p>
     <div class="d-flex justify-content-between">
-    <a class="btn btn-sm btn-primary rounded py-2 px-4" href>View Detail</a>
-    <a class="btn btn-sm btn-dark rounded py-2 px-4" href>Book Now</a>
+        <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{route('pages.roomdetails',[$room->id])}}">View Room<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
     </div>
     </div>
     </div>
+    @endforeach
+    @endif
     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.9s">
     <a href="{{route('pages.rooms')}}" class="btn btn-primary py-3 px-5">Explore All Rooms</a>
     </div>
