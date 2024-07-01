@@ -65,7 +65,7 @@
 body {
 	font-family: 'Varela Round', sans-serif;
 }
-.modal-confirm {		
+.modal-confirm {
 	color: #636363;
 	width: 325px;
 	font-size: 14px;
@@ -76,7 +76,7 @@ body {
 	border: none;
 }
 .modal-confirm .modal-header {
-	border-bottom: none;   
+	border-bottom: none;
 	position: relative;
 }
 .modal-confirm h4 {
@@ -86,21 +86,21 @@ body {
 }
 .modal-confirm .form-control, .modal-confirm .btn {
 	min-height: 40px;
-	border-radius: 3px; 
+	border-radius: 3px;
 }
 .modal2-confirm .close {
 	position: absolute;
 	top: -5px;
 	right: -5px;
-}	
+}
 .modal-confirm .modal-footer {
 	border: none;
 	text-align: center;
 	border-radius: 5px;
 	font-size: 13px;
-}	
+}
 .modal-confirm .icon-box {
-	color: #fff;		
+	color: #fff;
 	position: absolute;
 	margin: 0 auto;
 	left: 0;
@@ -157,7 +157,7 @@ body {
 
 
 <!-- Booking Start -->
-    <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s" id="book">
+    <div class="container-fluid booking pb-5 wow fadeIn " data-wow-delay="0.1s" id="book">
         <div class="container">
             <div class="bg-white shadow" style="padding: 35px;">
                 <form action="{{ route('pages.store') }}" method="POST" enctype="multipart/form-data">
@@ -290,7 +290,7 @@ body {
             </div>
           </div>
         </div>
-        </div> 
+        </div>
                {{--  --}}
                <div class="modal-footer">
                 <button type="submit" class="btn btn-primary w-100">Submit</button>

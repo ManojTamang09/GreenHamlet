@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2024 at 07:03 PM
+-- Generation Time: Jul 01, 2024 at 08:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -71,8 +71,11 @@ INSERT INTO `amenities` (`id`, `room_id`, `amenities`, `created_at`, `updated_at
 (7, 3, '24 Hour Reception Fecilities', '2023-10-28 10:40:46', '2023-10-28 10:40:46'),
 (8, 3, '24 Hour Reception', '2023-10-28 10:40:46', '2023-10-28 10:40:46'),
 (9, 3, '24 Hour Reception Fecilities', '2023-10-28 10:40:46', '2023-10-28 10:40:46'),
-(10, 5, 'New', '2024-06-30 07:55:45', '2024-06-30 07:55:45'),
-(11, 5, 'New', '2024-06-30 07:55:45', '2024-06-30 07:55:45');
+(10, 5, '24 Hour Reception', '2024-07-01 11:26:06', '2024-07-01 11:26:06'),
+(11, 5, '24 Hour Reception Fecilities', '2024-07-01 11:26:06', '2024-07-01 11:26:06'),
+(12, 5, 'Parking', '2024-07-01 11:26:06', '2024-07-01 11:26:06'),
+(13, 5, 'TV', '2024-07-01 11:26:06', '2024-07-01 11:26:06'),
+(14, 6, '24 Hour Reception', '2024-07-01 11:38:59', '2024-07-01 11:38:59');
 
 -- --------------------------------------------------------
 
@@ -100,9 +103,7 @@ INSERT INTO `contacts` (`id`, `name`, `email`, `contact`, `message`, `created_at
 (7, 'demo', 'demouser@user.com', 9876543210, 'asdasd', '2023-11-14 09:28:29', '2023-11-14 09:28:29'),
 (8, 'demo', 'demouser@user.com', 9876543210, 'sadasd', '2023-11-14 09:43:59', '2023-11-14 09:43:59'),
 (9, 'Manoj Tamang', 'demouser@user.com', 9876543210, 'asdasd', '2023-11-14 09:56:00', '2023-11-14 09:56:00'),
-(10, 'Manoj Tamang', 'demouser@user.com', 9876543210, 'asdasd', '2023-11-14 10:00:32', '2023-11-14 10:00:32'),
-(11, 'asd', 'demouser@abc.com', 234234, 'fsdfsdf', '2024-06-30 11:30:51', '2024-06-30 11:30:51'),
-(12, 'werewr', 'demouser@abc.com', 23432, '4fsdfsdf', '2024-06-30 11:31:19', '2024-06-30 11:31:19');
+(10, 'Manoj Tamang', 'demouser@user.com', 9876543210, 'asdasd', '2023-11-14 10:00:32', '2023-11-14 10:00:32');
 
 -- --------------------------------------------------------
 
@@ -138,11 +139,11 @@ CREATE TABLE `galleries` (
 --
 
 INSERT INTO `galleries` (`id`, `photo`, `title`, `created_at`, `updated_at`) VALUES
-(5, 'mrVgNzHSW53pZw0SIhRaIJlBRcpd9nyYSEDaFYQU.jpg', 'a', '2023-10-29 00:29:28', '2023-10-29 00:29:28'),
-(6, 'tk1slUk6oTzN8KpVbZPEmTXY6jMMwSUe6cJmIEtG.jpg', 'Add Photos To Gallery', '2023-10-29 00:37:29', '2023-10-29 00:37:29'),
-(7, 'JNvRC2TDV2CqOs3LWgjwBPhLgskYIkLcW3allfGP.jpg', 'Add Photos To Gallery', '2023-10-29 00:37:33', '2023-10-29 00:37:33'),
-(8, 'l7Ki5Pjynbc0B6rHNs02fOU8OVdMdvCYYY2HkXxS.jpg', 'Add Photos To Gallery', '2023-10-29 00:37:38', '2023-10-29 00:37:38'),
-(9, 'JSTN95RcXLAamKoy9q3IByw9YJ9VPAjdaG1ljGN3.jpg', 'Gtk', '2023-11-14 11:15:25', '2023-11-14 11:15:25');
+(10, 'iIqXdmIax7XQwAxp3OMhj1ehpdRH5a6ZkvCJ0Y6D.jpg', '1', '2024-07-01 12:32:46', '2024-07-01 12:32:46'),
+(11, 'PJ7XieirKWSXD8ly07HisUXXvtdTSNYMZ6Yu6Q8g.jpg', '2', '2024-07-01 12:32:50', '2024-07-01 12:32:50'),
+(12, '5upZ6dnwTVpOEvDw1ubn6E8XCkRIUrU51SvKi2j3.jpg', '3', '2024-07-01 12:32:53', '2024-07-01 12:32:53'),
+(13, '7ru4hiCpMzymq7b6uB4bP37dVmMwRUF4X5lC07Vw.jpg', '4', '2024-07-01 12:32:57', '2024-07-01 12:32:57'),
+(14, 'bQV6QiIMgmZpOH55ijBpo5S9d7Dy3kP7ofaLWIwU.jpg', '5', '2024-07-01 12:33:00', '2024-07-01 12:33:00');
 
 -- --------------------------------------------------------
 
@@ -271,10 +272,7 @@ CREATE TABLE `rooms` (
 
 INSERT INTO `rooms` (`id`, `name`, `photo`, `price`, `about_rooms`, `created_at`, `updated_at`) VALUES
 (1, 'Terrace Double  Deluxe', 'mphKWSo3jHma8WKOmzkUzYcdXmEI9pMGTyEuAa0u.jpg', '96000', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</p>', '2023-10-26 10:48:52', '2023-10-26 11:07:10'),
-(2, 'Double Deluxe', '3JfauHEafhydoEXrRSHJOImMib4CuxVeYzxOlJSX.jpg', '20000', '<h1>&nbsp;</h1>\r\n\r\n<p style=\"text-align:justify\"><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n\r\n<h1>&nbsp;</h1>', '2023-10-26 10:49:26', '2023-10-27 11:07:34'),
-(3, 'Premium Rooms', 'AWYG08J2CHnh7uExPZN7PYFDDdAntDECja2xVDOC.jpg', '60000', NULL, '2023-10-28 10:40:46', '2023-10-28 10:40:46'),
-(4, 'Standard Rooms', 'SoqC2t4JFgXpFuv4cfd0RFHVzX8Il7a0h9oHamAm.jpg', '1000', '<p>Cheap Rooms</p>', '2023-10-28 12:02:21', '2023-10-28 12:02:21'),
-(5, 'New Rom', '9G21BJAEXJCgid0fQnRqQlssEbyX5OvrPRc15ex3.jpg', '6000', '<p>Ok</p>', '2024-06-30 07:55:44', '2024-06-30 07:55:44');
+(2, 'Double Deluxe', '3JfauHEafhydoEXrRSHJOImMib4CuxVeYzxOlJSX.jpg', '20000', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</p>', '2023-10-26 10:49:26', '2024-06-25 11:20:45');
 
 -- --------------------------------------------------------
 
@@ -305,13 +303,7 @@ CREATE TABLE `room_enquiries` (
 INSERT INTO `room_enquiries` (`id`, `room_id`, `name`, `email`, `contact`, `message`, `check_in`, `check_out`, `no_of_rooms`, `children`, `adult`, `created_at`, `updated_at`) VALUES
 (1, 2, 'demo', 'demo@gov2.in', 9876543210, 'ddd', '2023-11-11', '2023-11-17', 3, 3, 2, '2023-11-11 02:42:27', '2023-11-11 02:42:27'),
 (4, 2, 'demo', 'demouser@user.com', 9876543210, 'asdasdasd', '2023-11-14', '2023-11-23', 2, 3, 1, '2023-11-14 10:03:18', '2023-11-14 10:03:18'),
-(5, 2, 'demo', 'demouser@user.com', 9876543210, 'asdasdasd', '2023-11-14', '2023-11-23', 2, 3, 1, '2023-11-14 10:04:01', '2023-11-14 10:04:01'),
-(6, 3, 'asd', 'demouser@abc.com', 23123, 'asdasd', '2024-06-19', '2024-07-05', 3, 2, 2, '2024-06-30 09:38:43', '2024-06-30 09:38:43'),
-(7, 2, 'asd', 'demouser@abc.com', 1312, 'asdasd', '2024-06-20', '2024-06-26', 3, 2, 3, '2024-06-30 09:41:25', '2024-06-30 09:41:25'),
-(8, 2, 'wqe', 'demouser@abc.com', 21312, 'sadasd', '2024-06-30', '2024-07-04', 3, 2, 2, '2024-06-30 09:46:24', '2024-06-30 09:46:24'),
-(9, 3, 'asd', 'demouser@abc.com', 23123, 'asdasd', '2024-06-19', '2024-07-05', 3, 2, 2, '2024-06-30 10:32:46', '2024-06-30 10:32:46'),
-(10, 1, 'demo user', 'demouser@abc.com', 4324, 'rwerwer', '2024-06-14', '2024-07-05', 3, 2, 2, '2024-06-30 10:39:38', '2024-06-30 10:39:38'),
-(11, 3, 'demo user', 'demouser@abc.com', 234234, 'dfsd', '2024-06-20', '2024-07-05', 3, 2, 1, '2024-06-30 11:03:15', '2024-06-30 11:03:15');
+(5, 2, 'demo', 'demouser@user.com', 9876543210, 'asdasdasd', '2023-11-14', '2023-11-23', 2, 3, 1, '2023-11-14 10:04:01', '2023-11-14 10:04:01');
 
 -- --------------------------------------------------------
 
@@ -335,7 +327,9 @@ INSERT INTO `room_galleries` (`id`, `room_id`, `photos`, `created_at`, `updated_
 (2, 1, '3roDFLJWa3r44EjxQjQX8neNeeXf4y9vN5f3KnUT.jpg', '2023-10-26 16:18:52', '2023-10-26 16:18:52'),
 (3, 2, 'WpdOk6KC4K7qUpAOXeiRlESzHMmDe46IIaMi2K9m.jpg', '2023-10-26 16:19:26', '2023-10-26 16:19:26'),
 (4, 2, 'IuyurOOI650IqTLm36fgrciD9VjW8nHOqorXINOS.jpg', '2023-10-26 16:19:26', '2023-10-26 16:19:26'),
-(5, 1, 'A5SfXzbZEpvKbgyaHLXmJ4Mrcnzp334qjVWrb1Cz.jpg', '2023-10-26 16:37:10', '2023-10-26 16:37:10');
+(5, 1, 'A5SfXzbZEpvKbgyaHLXmJ4Mrcnzp334qjVWrb1Cz.jpg', '2023-10-26 16:37:10', '2023-10-26 16:37:10'),
+(6, 6, 'rmffUTdQsGWUNd0scYVhninLeQrCe7FVJtnnEzCn.png', '2024-07-01 17:08:59', '2024-07-01 17:08:59'),
+(7, 7, 'spWus2QEZdoLEo4EVTHIPINP3Z9wbp6ODH9DGATg.png', '2024-07-01 17:11:57', '2024-07-01 17:11:57');
 
 -- --------------------------------------------------------
 
@@ -357,9 +351,9 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `photo`, `title`, `sub_title`, `created_at`, `updated_at`) VALUES
-(4, 'xfs7OQ7QkDNzy1GUNp6b5pX0yYBmuvRfimdFzHCW.jpg', 'Welcome To Snow White Retreat', 'A memorable stay at Snow White Retreat', '2023-10-26 16:17:32', '2023-10-26 16:17:32'),
-(5, 'biDpzpkmrxduNB33kbqDJNTQZGiFkebd0oRZ61sL.jpg', 'Welcome To Snow White Retreat', 'A memorable stay at Snow White Retreat', '2023-10-26 16:17:40', '2023-10-26 16:17:40'),
-(6, 'Rs1F2p72Z3eNIzX92x9uVjdir9skxPoEsKVXsEf3.jpg', 'Welcome To Snow White Retreat', 'A memorable stay at Snow White Retreat', '2023-10-27 15:57:37', '2023-10-27 15:57:37');
+(4, 'xfs7OQ7QkDNzy1GUNp6b5pX0yYBmuvRfimdFzHCW.jpg', 'Welcome To Green Hamlet', 'A memorable stay at Green Hamlet', '2023-10-26 16:17:32', '2023-10-26 16:17:32'),
+(5, 'biDpzpkmrxduNB33kbqDJNTQZGiFkebd0oRZ61sL.jpg', 'Welcome To Green Hamlet', 'A memorable stay at Green Hamlet', '2023-10-26 16:17:40', '2023-10-26 16:17:40'),
+(6, 'Rs1F2p72Z3eNIzX92x9uVjdir9skxPoEsKVXsEf3.jpg', 'Welcome To Green Hamlet', 'A memorable stay at Green Hamlet', '2023-10-27 15:57:37', '2023-10-27 15:57:37');
 
 -- --------------------------------------------------------
 
@@ -408,8 +402,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Hotel Admin', 'traveladmin@supermantoursandtravels.com', NULL, '$2y$10$uRyO0ld4NtBGBYyoW1IRvei5LuaulTr1G.jR64bg1k/EMYQEfpXkW', NULL, '2021-07-14 00:34:22', '2022-02-27 04:01:26'),
-(4, 'Demo Admin', 'demoadmin@supermantoursandtravels.com', NULL, '$2y$10$hO.wK5HFDDjYqDpcmWzxjemOGJuMit2HN9l/HyDq0SFl9EU1fsNKu', NULL, '2022-02-27 04:01:56', '2022-02-27 04:01:56'),
-(5, 'Green Hamlet Admin', 'ghadmin@greenhamlet.com', NULL, '$2y$10$o/r1yRG25KR7gaUTC2CH3O/086BATlNoaVrRgfkA7qBD/C56LlhgO', NULL, '2024-06-30 07:54:51', '2024-06-30 07:54:51');
+(4, 'Demo Admin', 'demoadmin@supermantoursandtravels.com', NULL, '$2y$10$hO.wK5HFDDjYqDpcmWzxjemOGJuMit2HN9l/HyDq0SFl9EU1fsNKu', NULL, '2022-02-27 04:01:56', '2022-02-27 04:01:56');
 
 --
 -- Indexes for dumped tables
@@ -525,19 +518,19 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `amenities`
 --
 ALTER TABLE `amenities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `nearby_attractions`
@@ -555,19 +548,19 @@ ALTER TABLE `role_user`
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `room_enquiries`
 --
 ALTER TABLE `room_enquiries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `room_galleries`
 --
 ALTER TABLE `room_galleries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `sliders`
@@ -585,7 +578,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -169,6 +169,7 @@
                                                 html=  "<div class='row mb-4' style='border-style: solid;border-color: rgba(201, 76, 76, 0.3);'>"+
                                             "<div class='form-group col-md-12 col-sm-12'>"+
                                             "<label>Amenities</label><input type='text' class='form-control'id='dag' name='amenities[]'  required></div>"+
+                                            "<button type='button' class='btn btn-danger remove-lnk float-right'>Remove</button><br/>"+
                                             "</div>";
                                                   if(count<max_input){
                                                     $('.card-body1').append(html);

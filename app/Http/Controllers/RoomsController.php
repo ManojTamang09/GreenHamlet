@@ -17,7 +17,7 @@ class RoomsController extends Controller
      */
     public function index()
     {
-        $booking=Rooms::all();
+        $booking = Rooms::orderBy('id', 'desc')->get();
         return view('admin.rooms.index',compact('booking'));
     }
 
@@ -273,13 +273,14 @@ class RoomsController extends Controller
 
         $new=DB::table('amenities')
         ->select('amenities.*')
-        ->where('amenities.travel_id',$request->newid)
+        ->where('amenities.room_id',$request->newid)
         ->delete();
 
-        $new2=DB::table('amenities')
-        ->select('amenities.*')
-        ->where('amenities.travel_id',$request->newid)
-        ->delete();
+        // $new2=DB::table('amenities')
+        // ->select('amenities.*')
+        // ->where('amenities.travel_id',$request->newid)
+        // ->delete();
+
         return redirect()->back()->with('message','Record deleted successfully!!!');
     }
 }

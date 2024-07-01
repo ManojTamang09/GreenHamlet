@@ -6,6 +6,7 @@ use App\Rooms;
 use App\RoomEnquiry;
 use App\About;
 use App\Contact;
+use App\Gallery;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -114,6 +115,12 @@ class PagesController extends Controller
         return redirect()->back()->with('message','Thank you...Enquiry Added Successfully,');
     }
 
+    public function gallery(Request $request)
+    {
+
+        $gallery=Gallery::orderby('id','desc')->get();
+        return view('pages.gallery',compact('gallery'));
+    }
 
 
 }

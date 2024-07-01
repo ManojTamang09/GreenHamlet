@@ -30,7 +30,7 @@
                                 <a class="btn btn-link" href="">Privacy Policy</a>
                                 <a class="btn btn-link" href="">Terms & Condition</a>
                             {{-- </div> --}}
-                           
+
                     </div>
                 </div>
             </div>
@@ -71,6 +71,7 @@
     <script src="{{asset('pages/lib/counterup/counterup.min.js')}}"></script>
     <script src="{{asset('pages/lib/owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{asset('pages/lib/tempusdominus/js/moment.min.js')}}"></script>
+    <script src="{{asset('pages/lib/lightbox/js/lightbox.min.js')}}"></script>
     <script src="{{asset('pages/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
     <script src="{{asset('pages/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 

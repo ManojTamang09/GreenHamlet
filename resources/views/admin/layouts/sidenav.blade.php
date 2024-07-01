@@ -30,7 +30,7 @@
               </div>
           </div>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('rooms.index')}}" data-toggle="collapse" data-target="#collapseUtilities1"
             aria-expanded="true" aria-controls="collapseUtilities1">
             <i class="fas fa-fw fa-wrench"></i>
@@ -43,7 +43,7 @@
                 <a class="collapse-item" href="{{route('attractions.index')}}">View</a>
             </div>
         </div>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('rooms.index')}}" data-toggle="collapse" data-target="#collapseUtilities12"
             aria-expanded="true" aria-controls="collapseUtilities12">
@@ -59,7 +59,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('rooms.index')}}" data-toggle="collapse" data-target="#collapseUtilities1234"
             aria-expanded="true" aria-controls="collapseUtilities1234">
             <i class="fas fa-fw fa-wrench"></i>
@@ -72,7 +72,7 @@
                 <a class="collapse-item" href="{{route('testimonials.index')}}">View</a>
             </div>
         </div>
-    </li>
+    </li> --}}
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities123s"

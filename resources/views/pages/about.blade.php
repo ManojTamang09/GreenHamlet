@@ -27,8 +27,8 @@
    @include('pages.layouts.modal')
 
    <!-- Booking End -->
-    
-   <div class="container-xxl py-5">
+
+   <div class="container-xxl py-5 bg-white">
     <div class="container">
     <div class="row g-5">
     <div class="col-lg-6" style="min-height: 350px;">
@@ -65,15 +65,15 @@
     <span>24/7 Support</span>
     </div>
     </div>
-    <a class="btn btn-primary py-3 px-5 mt-4" href>Explore More</a>
+    <a class="btn btn-primary py-3 px-5 mt-4" href="{{route('pages.rooms')}}">View Rooms</a>
     </div>
     </div>
     </div>
     </div>
 
 
-    
-<div class="container-xxl py-5">
+
+<div class="container-xxl py-5 bg-white">
     <div class="container">
     <div class="row g-5">
     <div class="col-lg-6 pt-4" style="min-height: 350px;">
